@@ -48,4 +48,4 @@ sudo curl -L https://github.com/docker/machine/releases/lastest/download/docker-
 # Reboot to verify it all loads fine on its own.
 sudo reboot
 ```
-https://imgur.com/cZjstXk.png
+![Image of UserData](https://imgur.com/cZjstXk.png)
