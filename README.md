@@ -5,7 +5,7 @@ Run a Amazon Linux 2 IAM with docker installed and all necessary permissions.
 * [Instruction](#Instructions)
 * [Prerequisites](#Prerequisites)
 * [Setup](#setup)
-* [Validating the environment](#Validating the environment)
+* [Validating the environment](#Validating-the-environment)
 
 ## Instructions
 Follow the step by step to create a new ec2 instance on AWS with Git, Docker, Docker-Compose and Docker-Machine installed and configured.
