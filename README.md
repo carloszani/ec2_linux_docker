@@ -10,7 +10,7 @@ Run a Linux 2 IAM with docker installed and all necessary permissions.
 Follow the step by step to create a new ec2 instance on AWS with Git, Docker, Docker-Compose and Docker-Machine installed and configured.
 
 ## Prerequisites
-- Have an AWS account with permission to create and run EC2 instances. (If you don't have it, follow the instructions here: https://portal.aws.amazon.com/billing/signup?nc2=h_ct&src=header_signup&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start)
+- Have an AWS account with permission to create and run EC2 instances. (If you don't have it, follow the instructions <a target="_blank" rel="noopener noreferrer" href="https://portal.aws.amazon.com/billing/signup?nc2=h_ct&src=header_signup&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start">Link</a>.)
 - A <b>valid credit card</b> for billing (<b>new accounts have 12 months of free use on AWS</b>).
 
 ## Setup 
