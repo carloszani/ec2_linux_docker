@@ -16,4 +16,4 @@ Follow the step by step to create a new ec2 instance on AWS with Git, Docker, Do
 ## Setup 
 
 # Selecting an Amazon Linux 2 IAM (Free Tier eligible)
-- In the example I'm using an Amazon 2 Linux IAM (Free Tier).
+* In the example I'm using an Amazon 2 Linux IAM (Free Tier).
