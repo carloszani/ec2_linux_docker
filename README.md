@@ -26,7 +26,7 @@ Follow the step by step to create a new ec2 instance on AWS with Git, Docker, Do
 #!/bin/bash
 
 echo "Updating IAM..."
-yum update -y &&
+sudo yum update -y &&
 
 echo "Installing docker and add user ec2 in the group to avoid to use sudo command in docker."
 sudo amazon-linux-extras install docker &&
@@ -45,7 +45,7 @@ sudo curl -L  https://github.com/docker/compose/releases/latest/download/docker-
 
 echo "Getting lastest docker-machine and fixing permissions......"
 sudo curl -L https://github.com/docker/machine/releases/lastest/download/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
-    chmod +x /tmp/docker-machine &&
+    sudo chmod +x /tmp/docker-machine &&
     sudo cp /tmp/docker-machine /usr/local/bin/docker-machine &&
 
 echo "Rebooting the EC2..."
