@@ -24,17 +24,17 @@ Follow the step by step to create a new ec2 instance on AWS with Git, Docker, Do
 
 ```shell
 #!/bin/bash
-yum update -y
+yum update -y &&
 
-sudo amazon-linux-extras install docker
-sudo service docker start
-sudo usermod -a -G docker ec2-user
+sudo amazon-linux-extras install docker &&
+sudo service docker start &&
+sudo usermod -a -G docker ec2-user &&
 
 # Make docker auto-start
-sudo chkconfig docker on
+sudo chkconfig docker on &&
 
 # Install GIT
-sudo yum install -y git
+sudo yum install -y git &&
 
 # Get lastest docker-compose verion & fix permissions after download
 sudo curl -L  https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose &&
@@ -43,7 +43,7 @@ sudo curl -L  https://github.com/docker/compose/releases/latest/download/docker-
 # Get lastest docker-machine version & fix permission after download
 sudo curl -L https://github.com/docker/machine/releases/lastest/download/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
     chmod +x /tmp/docker-machine &&
-    sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
+    sudo cp /tmp/docker-machine /usr/local/bin/docker-machine &&
 
 # Reboot to verify it all loads fine on its own.
 sudo reboot
