@@ -26,28 +26,32 @@ Follow the step by step to create a new ec2 instance on AWS with Git, Docker, Do
 #!/bin/bash
 
 echo "Updating IAM..."
-sudo yum update -y &&
+yum update -y &&
 
 echo "Installing docker and add user ec2 in the group to avoid to use sudo command in docker."
 sudo amazon-linux-extras install docker &&
 sudo service docker start &&
 sudo usermod -a -G docker ec2-user &&
 
-echo "Making docker auto-start..."
+# Make docker auto-start
+echo "Make docker auto-start..."
 sudo chkconfig docker on &&
 
+# Install GIT
 echo "Installing git..."
 sudo yum install -y git &&
 
-echo "Getting lastest docker-compose and fixing permissions..."
+# Get lastest docker-compose verion & fix permissions after download
+echo "Getting lastest docker-compose...."
 sudo curl -L  https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose &&
     sudo chmod +x /usr/local/bin/docker-compose &&
 
-echo "Getting lastest docker-machine and fixing permissions......"
-sudo curl -L https://github.com/docker/machine/releases/lastest/download/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
-    sudo chmod +x /tmp/docker-machine &&
-    sudo cp /tmp/docker-machine /usr/local/bin/docker-machine &&
+# Get lastest docker-machine version & fix permission after download
+echo "Getting lastest docker-machine..."
+sudo curl -L https://github.com/docker/machine/releases/download/v0.16.2/docker-machine-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-machine &&
+    sudo chmod +x /usr/local/bin/docker-machine &&
 
+# Reboot to verify it all loads fine on its own.
 echo "Rebooting the EC2..."
 sudo reboot
 ```
