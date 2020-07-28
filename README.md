@@ -20,3 +20,32 @@ Follow the step by step to create a new ec2 instance on AWS with Git, Docker, Do
 * In the example I'm using an Amazon 2 Linux IAM (Free Tier).
 ![Image of IAM](https://imgur.com/D9tcUlx.jpg)
 
+* In Step3 of creating EC2, add the following UserData:
+
+```shell
+#!/bin/bash
+yum update -y
+
+sudo amazon-linux-extras install docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+
+# Make docker auto-start
+sudo chkconfig docker on
+
+# Install GIT
+sudo yum install -y git
+
+# Get lastest docker-compose verion & fix permissions after download
+sudo curl -L  https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose &&
+    sudo chmod +x /usr/local/bin/docker-compose
+
+# Get lastest docker-machine version & fix permission after download
+sudo curl -L https://github.com/docker/machine/releases/lastest/download/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
+    chmod +x /tmp/docker-machine &&
+    sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
+
+# Reboot to verify it all loads fine on its own.
+sudo reboot
+```
+https://imgur.com/cZjstXk.png
