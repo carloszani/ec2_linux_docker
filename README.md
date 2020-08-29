@@ -25,7 +25,7 @@ Follow the step by step to create a new ec2 instance on AWS with Git, Docker, Do
 * In Step3 of creating EC2, add the following UserData:
 
 ```shell
-# "Updating IAM..."
+# "Updating AMI..."
 yum update -y
 
 # Installing docker and add user ec2 in docker group to avoid to use the command sudo in docker
